@@ -22,7 +22,7 @@
     <!-- Header -->
     <div class="container-fluid p-4 bg-primary bg-gradient">
         <header>
-            <h1 class="fs-3 fw-bold text-white text-center">Deep Fake Detection</h1>
+            <h1 class="fs-3 fw-bold text-white text-center">Deep Fake Identification of Videos</h1>
         </header>
     </div>
 
@@ -43,15 +43,31 @@
         <!-- Container # 02 -->
         <div class="container mt-5">
             <!-- Upload File & Button -->
-            <div class="rows-cols-1">
-                <div class="input-group mb-4">
-                    <input type="file" class="form-control border-primary" id="inputFile">
+            <div class="rows-cols-*">
+                <form action="/upload" method="POST" enctype="multipart/form-data" class="input-group">
+                    <input class="form-control border-primary mb-4" type="file" name="video" accept="video/*"
+                        id="inputFile">
+                    <input type="submit" class="btn btn-primary w-100 fs-5 p-2 fw-bold" value="Upload Video"></input>
+                </form>
+
+                <!-- Message Suuccess -->
+                {% if success %}
+                <div class="bg-success bg-opacity-25 p-3 shadow-sm rounded mt-4">
+                    <p class="text-center fw-bold fs-5">
+                        Video Uploaded & Processing Start!
+                    </p>
                 </div>
-                <button type="button" class="btn btn-primary w-100 fs-5 p-2 fw-bold">Process File</button>
+                <!-- Message Failed -->
+                {% endif %}
+
+                <!-- Path of Saved File -->
+                {% if saved_path %}
+                <p>Video saved at: {{ saved_path }}</p>
+                {% endif %}
             </div>
         </div>
 
-        <!-- Container # 02 -->
+        <!-- Container # 03 -->
         <div class="container mt-5">
             <!-- Output Text -->
             <div class="rows-cols-">
@@ -64,8 +80,7 @@
     <!-- Footer -->
     <div class="container-fluid bg-primary bg-gradient bg-opacity-25 p-4" id="footer">
         <footer>
-            <h3 class="fs-6 text-center fw-bold">&copy;
-            </h3>
+            <h3 class="fs-6 text-center fw-bold">Copyright &copy; 2024 - Deep Fake Detection. All rights reserved!</h3>
         </footer>
     </div>
 
