@@ -27,6 +27,7 @@ def upload_file():
         if uploaded_file and allowed_file(uploaded_file.filename):
             filename = secure_filename(uploaded_file.filename)
             filepath = os.path.join(UPLOAD_FOLDER, filename)
+            filepath = filepath.replace('\\','/')
             uploaded_file.save(filepath)
 
             return render_template('index.html', saved_path=filepath, success=True) 
