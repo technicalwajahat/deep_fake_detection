@@ -23,7 +23,6 @@ def upload_file():
                 
         if uploaded_file.filename == '':
             return redirect(request.url)
-        
 
         if uploaded_file and allowed_file(uploaded_file.filename):
             filename = secure_filename(uploaded_file.filename)
