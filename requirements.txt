@@ -1,0 +1,8 @@
+facenet_pytorch==2.5.3
+Flask==2.3.2
+numpy
+opencv_contrib_python
+opencv_python
+opencv_python_headless
+torch==2.0.1
+torchvision==0.15.2
