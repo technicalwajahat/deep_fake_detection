@@ -4,5 +4,5 @@ numpy
 opencv_contrib_python
 opencv_python
 opencv_python_headless
-torch==2.0.1
+torch==2.2.0
 torchvision==0.15.2
